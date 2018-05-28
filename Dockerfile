@@ -1,4 +1,5 @@
 FROM python:2.7
+LABEL maintainer "Tim Cinel <email@timcinel.com>"
 
 WORKDIR /opt
 
@@ -10,4 +11,4 @@ RUN pip install -r requirements.txt
 ADD auswoo.py requirements.txt process.sh  ./
 
 
-CMD [ 'process.sh' ]
+ENTRYPOINT [ "/bin/bash", "/opt/process.sh" ]
